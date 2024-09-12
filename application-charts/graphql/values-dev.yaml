@@ -1,0 +1,47 @@
+global:
+  chartName: graphql
+graphql:
+  # Deployment object
+  deployment:
+    enabled: true
+    name: graphql
+    namespace: ecommerce
+    replicas: 3
+    appName: graphql
+    role: api
+    containerName: graphql-container
+    imageRepository: lukondefmwila/ecommerce-graphql
+    imageTag: "0.1.5"
+    port: 3002
+  # Updated (New) Deployment resource
+  newDeployment:
+    enabled: false
+  # Canary Service object
+  canaryService:
+    enabled: false
+  # Service object
+  service:
+    enabled: true
+    name: graphql-service
+    namespace: ecommerce
+    appName: graphql
+    type: LoadBalancer
+    servicePort: 3002
+    targetPort: 3002
+  # Service Account object
+  serviceAccount:
+    enabled: true
+    name: graphql-service-account
+    namespace: ecommerce
+  # Namespace object
+  namespace:
+    enabled: false
+  # Ingress 
+  ingress:
+    enabled: false
+  # Horizontal Pod Autoscaler
+  hpa:
+    enabled: false
+  # Canary Rollout
+  canaryRollout:
+    enabled: false 

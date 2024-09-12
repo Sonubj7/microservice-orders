@@ -1,0 +1,47 @@
+global:
+  chartName: orders
+orders:
+  # Deployment object
+  deployment:
+    enabled: false
+  # Updated (New) Deployment resource
+  newDeployment:
+    enabled: true
+    name: orders
+    namespace: ecommerce
+    replicas: 3
+    appName: orders
+    role: api
+    containerName: orders-container
+    imageRepository: lukondefmwila/ecommerce-orders
+    imageTag: sha256:85bb6e4c001c3d29f469ad21f33aae3ade47193ac2ef6817431459a70346955d
+    port: 3003
+  # Horizontal Pod Autoscaler
+  hpa:
+    enabled: false
+  # Service Account object
+  serviceAccount:
+    enabled: true
+    name: orders-service-account
+    namespace: ecommerce
+  # Stable Service object
+  service:
+    enabled: true
+    name: orders-service
+    namespace: ecommerce
+    appName: orders
+    type: ClusterIP
+    servicePort: 3003
+    targetPort: 3003
+  # Canary Service object (for Argo Rollouts)
+  canaryService:
+    enabled: false
+  # Namespace object
+  namespace:
+    enabled: false
+  # Ingress 
+  ingress:
+    enabled: false
+  # Canary Rollout # Canary Service object (for Argo Rollouts)
+  canaryRollout:
+    enabled: false
