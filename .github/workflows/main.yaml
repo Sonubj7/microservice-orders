@@ -60,14 +60,12 @@ jobs:
           git clone -b main "https://Sonubj7:${ACCESS_TOKEN}@github.com/Sonubj7/microservice-helmchart-examples.git" ${TEMP_FOLDER} 
           cd ${TEMP_FOLDER}/application-charts/orders 
           ls
-          echo Update Helm chart values-dev with new image tag digest
-          IMAGE_TAG_DIGEST=$(docker manifest inspect --verbose sonubj/microservices:$CONTAINER_IMAGE_TAG | jq -r '.Descriptor.digest')
-          echo New container image digest: $IMAGE_TAG_DIGEST
-          IMAGE_TAG_DIGEST=$IMAGE_TAG_DIGEST yq e -i '.deployment.imageTag = env(IMAGE_TAG_DIGEST)' ./values.yaml
+          echo Update Helm chart values-dev with new image tag 
+          CONTAINER_IMAGE_TAG=$CONTAINER_IMAGE_TAG yq e -i '.deployment.imageTag = env(CONTAINER_IMAGE_TAG)' ./values.yaml
           echo 'Container image tag updated in orders/values.yaml' 
           cd ../../
-          git config user.email "sonubj.7@gmail.com" 
+          git config user.email "sonubj.7@gmail.com"  
           git config user.name "Sonubj7" 
           git add .  
-          git commit -m "refactor - updated Helm chart values for dev environment with container image - $CONTAINER_IMAGE_TAG" 
+          git commit -m "refactor - updated Helm chart values with container image - $CONTAINER_IMAGE_TAG" 
           git push -u origin main
