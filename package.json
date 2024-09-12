@@ -9,7 +9,7 @@
     "test": "export NODE_ENV=test & jasmine 'src/test/**/*.js'"
   },
   "keywords": [],
-  "author": "Luke Mwila",
+  "author": "Sonu",
   "license": "ISC",
   "engines": {
     "node": ">=12 <=18.6.0",
