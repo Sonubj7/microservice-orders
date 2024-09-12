@@ -46,9 +46,9 @@ jobs:
           npm run test
           CONTAINER_IMAGE_TAG="$(node -e "console.log(require('./package.json').version);")"
           echo Building the Docker image...
-          docker build -t sonubj7/microservices:$CONTAINER_IMAGE_TAG . 
+          docker build -t sonubj/microservices:$CONTAINER_IMAGE_TAG . 
           echo Pushing the Docker image...
-          docker push sonubj7/microservices:$CONTAINER_IMAGE_TAG
+          docker push sonubj/microservices:$CONTAINER_IMAGE_TAG
       # Clone git repository with Helm charts, update and push changes
       - name: Update image tag in Helm git repo 
         run: | 
