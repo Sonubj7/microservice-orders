@@ -63,8 +63,8 @@ jobs:
           echo Update Helm chart values-dev with new image tag digest
           IMAGE_TAG_DIGEST=$(docker manifest inspect --verbose sonubj/microservices:$CONTAINER_IMAGE_TAG | jq -r '.Descriptor.digest')
           echo New container image digest: $IMAGE_TAG_DIGEST
-          IMAGE_TAG_DIGEST=$IMAGE_TAG_DIGEST yq e -i '.orders.newDeployment.imageTag = env(IMAGE_TAG_DIGEST)' ./values-dev.yaml
-          echo 'Container image tag updated in orders/values-dev.yaml' 
+          IMAGE_TAG_DIGEST=$IMAGE_TAG_DIGEST yq e -i '.orders.newDeployment.imageTag = env(IMAGE_TAG_DIGEST)' ./values.yaml
+          echo 'Container image tag updated in orders/values.yaml' 
           cd ../../
           git config user.email "sonubj.7@gmail.com" 
           git config user.name "Sonubj7" 
