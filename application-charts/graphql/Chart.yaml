@@ -1,0 +1,10 @@
+apiVersion: v2
+description: The graphql microservice helm chart
+keywords:
+  - graphql
+maintainers:
+  - email: outlier.developer@gmail.com
+    name: Luke Mwila
+name: graphql
+appVersion: "0.1.0"
+version: 0.1.0
