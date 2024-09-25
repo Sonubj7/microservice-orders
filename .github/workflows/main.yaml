@@ -33,6 +33,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
+          registry: harbor.192.168.1.101.nip.io:8443
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PW }}
     
