@@ -37,11 +37,7 @@ jobs:
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PW }}
     
-    # Build Docker image
-      - name: Build Docker Image
-        run: |
-          docker build -t "${{ env.HARBOR_URL }}/tester/test-image:latest" -f ./Dockerfile .
-    
+
 
       # Build and test application
       - name: Build, test and push to Docker Hub
@@ -51,9 +47,9 @@ jobs:
           npm run test
           CONTAINER_IMAGE_TAG="$(node -e "console.log(require('./package.json').version);")"
           echo Building the Docker image...
-          docker build -t tester/test-image:$CONTAINER_IMAGE_TAG . 
+          docker build -t "${{ env.HARBOR_URL }}/tester/test-image":$CONTAINER_IMAGE_TAG . 
           echo Pushing the Docker image...
-          docker push tester/test-image:$CONTAINER_IMAGE_TAG
+          docker push "${{ env.HARBOR_URL }}/tester/test-image":$CONTAINER_IMAGE_TAG
       # Clone git repository with Helm charts, update and push changes
       - name: Update image tag in Helm git repo 
         run: | 
