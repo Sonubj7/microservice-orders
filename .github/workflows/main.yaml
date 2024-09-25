@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  HARBOR_URL: 'https://harbor.192.168.1.101.nip.io:8443'  # Update this with your Harbor URL
+  HARBOR_URL: 'harbor.192.168.1.101.nip.io:8443'  # Update this with your Harbor URL
   DOCKER_ID: ${{ secrets.DOCKER_ID }}
   DOCKER_PW: ${{ secrets.DOCKER_PW }}
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -31,7 +31,7 @@ jobs:
 
       # Login to Harbor registry
       - name: Login to Harbor Registry
-        run:  docker login "${{ env.HARBOR_URL }}" --username "${{ secrets.DOCKER_ID }}" --password "${{ secrets.DOCKER_PW }}"
+        run:  docker login  --username "${{ secrets.DOCKER_ID }}" --password "${{ secrets.DOCKER_PW }}"
     
     # Build Docker image
       - name: Build Docker Image
