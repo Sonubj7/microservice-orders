@@ -12,7 +12,7 @@ env:
 jobs:
   build_image:
     name: Build Image & Update Helm Chart Values
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:     
@@ -33,7 +33,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          registry: http://harbor.192.168.1.101.nip.io:8443
+          registry: harbor.192.168.1.101.nip.io:8443
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PW }}
     
