@@ -31,7 +31,7 @@ jobs:
 
       # Login to Harbor registry
       - name: Login to Harbor Registry
-        run: echo "${{ secrets.HARBOR_DOCKER_PW }}" | docker login "${{ env.HARBOR_URL }}" --username "${{ env.DOCKER_ID }}" --password-stdin
+        run: echo "${{ secrets.HARBOR_DOCKER_PW }}" | docker login "harbor.192.168.1.101.nip.io:8443" --username "${{ secrets.HARBOR_DOCKER_ID }}" --password-stdin
     
     # Build Docker image
       - name: Build Docker Image
