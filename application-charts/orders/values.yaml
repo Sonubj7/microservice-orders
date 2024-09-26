@@ -10,4 +10,4 @@ deployment:
   imageTag: 0.3.28
   port: 3003
   imagePullSecrets:
-    - name: s-9mftv  # Your Docker registry secret here
+    - name: s-9mftv # Your Docker registry secret here
