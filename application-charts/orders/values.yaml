@@ -11,13 +11,13 @@ deployment:
     tag: 0.3.22
   service:
     port: 3003
-
+  imageTag: 0.3.25
 # Reference to existing secrets
 secrets:
-  usernameSecret: "harbor-release-core"  # Name of the secret
-  usernameKey: "HARBOR_USERNAME"          # Key in the secret
-  passwordSecret: "harbor-release-core"    # Name of the secret
-  passwordKey: "HARBOR_ADMIN_PASSWORD"     # Key in the secret
-  tlsSecret: "harbor-release-core"          # Name of the secret for TLS
-  tlsCertKey: "tls.crt"                    # Key for the certificate
-  tlsKeyKey: "tls.key"                     # Key for the private key
+  usernameSecret: "harbor-release-core" # Name of the secret
+  usernameKey: "HARBOR_USERNAME" # Key in the secret
+  passwordSecret: "harbor-release-core" # Name of the secret
+  passwordKey: "HARBOR_ADMIN_PASSWORD" # Key in the secret
+  tlsSecret: "harbor-release-core" # Name of the secret for TLS
+  tlsCertKey: "tls.crt" # Key for the certificate
+  tlsKeyKey: "tls.key" # Key for the private key
