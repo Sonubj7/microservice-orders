@@ -3,13 +3,12 @@ deployment:
   name: orders
   namespace: ecommerce
   replicas: 1
-  appName: orders  
-  role: api       
-  containerName: orders-container 
+  appName: orders
+  role: api
+  containerName: orders-container
   port: 3003
-
+  imageTag: 0.3.21
 image:
   repository: harbor.192.168.1.101.nip.io:8443/tester/test-image
   tag: 0.3.21
   pullPolicy: IfNotPresent
-
