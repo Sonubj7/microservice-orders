@@ -11,10 +11,10 @@ deployment:
   port: 3003
 # Reference to existing secrets
 secrets:
-  usernameSecret: "harbor-release-core" # Name of the secret
+  usernameSecret: "harbor-cred" # Name of the secret
   usernameKey: "HARBOR_USERNAME" # Key in the secret
-  passwordSecret: "harbor-release-core" # Name of the secret
+  passwordSecret: "harbor-cred" # Name of the secret
   passwordKey: "HARBOR_ADMIN_PASSWORD" # Key in the secret
-  tlsSecret: "harbor-release-core" # Name of the secret for TLS
+  tlsSecret: "harbor-cred" # Name of the secret for TLS
   tlsCertKey: "tls.crt" # Key for the certificate
   tlsKeyKey: "tls.key" # Key for the private key
