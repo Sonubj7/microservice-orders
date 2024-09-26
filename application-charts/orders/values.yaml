@@ -11,6 +11,7 @@ deployment:
     imageTag: 0.3.25
   service:
     port: 3003
+  imageTag: 0.3.25
 # Reference to existing secrets
 secrets:
   usernameSecret: "harbor-release-core" # Name of the secret
