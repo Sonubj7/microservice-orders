@@ -7,5 +7,5 @@ deployment:
   role: api
   containerName: orders-container
   imageRepository: harbor.192.168.1.101.nip.io:8443/tester/test-image
-  imageTag: 0.3.21
+  imageTag: 0.3.22
   port: 3003
