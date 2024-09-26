@@ -9,12 +9,5 @@ deployment:
   imageRepository: harbor.192.168.1.101.nip.io:8443/tester/test-image
   imageTag: 0.3.28
   port: 3003
-# Reference to existing secrets
-secrets:
-  usernameSecret: "harbor-cred" # Name of the secret
-  usernameKey: "HARBOR_USERNAME" # Key in the secret
-  passwordSecret: "harbor-cred" # Name of the secret
-  passwordKey: "HARBOR_ADMIN_PASSWORD" # Key in the secret
-  tlsSecret: "harbor-cred" # Name of the secret for TLS
-  tlsCertKey: "tls.crt" # Key for the certificate
-  tlsKeyKey: "tls.key" # Key for the private key
+  imagePullSecrets:
+    - name: s-9mftv  # Your Docker registry secret here
