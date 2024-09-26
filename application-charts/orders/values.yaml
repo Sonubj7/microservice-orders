@@ -8,10 +8,9 @@ deployment:
   containerName: orders-container
   image:
     repository: harbor.192.168.1.101.nip.io:8443/tester/test-image
-    tag: 0.3.22
+    imageTag: 0.3.25
   service:
     port: 3003
-  imageTag: 0.3.25
 # Reference to existing secrets
 secrets:
   usernameSecret: "harbor-release-core" # Name of the secret
