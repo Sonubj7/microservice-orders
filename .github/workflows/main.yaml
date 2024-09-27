@@ -58,7 +58,7 @@ jobs:
           echo Create temporary folder to clone the repo into...
           TEMP_FOLDER="$(mktemp -d)" 
           echo Clone the repository...
-          git clone -b main "https://Sonubj7:${ACCESS_TOKEN}@github.com/Sonubj7/microservice-orders.git" ${TEMP_FOLDER} 
+          git clone -b dev "https://Sonubj7:${ACCESS_TOKEN}@github.com/Sonubj7/microservice-orders.git" ${TEMP_FOLDER} 
           cd ${TEMP_FOLDER}/application-charts/orders 
           ls
           echo Update Helm chart values-dev with new image tag 
@@ -69,4 +69,4 @@ jobs:
           git config user.name "Sonubj7" 
           git add .  
           git commit -m "refactor - updated Helm chart values with container image - $CONTAINER_IMAGE_TAG" 
-          git push -u origin main
+          git push -u origin dev
