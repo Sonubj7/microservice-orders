@@ -7,7 +7,7 @@ deployment:
   role: api
   containerName: orders-container
   imageRepository: localhost:8080/productemcode/test-image
-  imageTag: 0.3.36
+  imageTag: 0.3.38
   port: 3003
   imagePullSecrets:
     - name: risker
