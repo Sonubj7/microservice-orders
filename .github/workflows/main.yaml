@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  HARBOR_URL: 'harbor.192.168.1.101.nip.io:8443'  # Update this with your Harbor URL
+  HARBOR_URL: 'localhost:8080'  # Update this with your Harbor URL
   DOCKER_ID: ${{ secrets.DOCKER_ID }}
   DOCKER_PW: ${{ secrets.DOCKER_PW }}
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
